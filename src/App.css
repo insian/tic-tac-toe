@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color:black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,9 +18,35 @@
   font-size: 42px;
   font-weight: bolder;
   text-align: center;
-  margin: 0px auto 20px auto;
+  margin: 0px auto 10px auto;
 }
 
+
+.start {
+  color: #1CDBF5;
+  font-size: x-large;
+  margin: 0px;
+  font-weight: bolder;
+}
+
+.xo-button{
+  width: max-content;
+  margin: 10px;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.score-text {
+  font-size:large;
+  font-weight: 600;
+  color:#1CDBF5;
+  margin: 0px;
+}
+
+.score {
+  font-size: large;
+  margin: 0px auto 15px auto;
+}
 
 .row {
   display: flex;
@@ -41,9 +67,8 @@
   min-height: 80px;
   font-size: 56px;
   text-align: center;
-  color: #1CDBF5;
   font-weight: bolder;
-  padding: 20px;
+  padding: 15px;
 }
 
 .border-br {
@@ -60,26 +85,29 @@
 }
 
 .clear-button{
-  width: max-content;
-  margin: 40px auto 10px auto;
+  width:max-content;
+  margin: 40px 20px 10px auto;
   font-weight: bolder;
   font-size: large;
+}
+
+.restart {
+  width: max-content;
+  margin: 40px auto 10px 20px;
+  font-weight: bolder;
+  font-size:large;
 }
 
 .made-by {
-  color: #1CDBF5;
+  color: #ffffff;
   font-size: small;
 }
 
-.start {
-  color: #1CDBF5;
-  font-size: x-large;
-  margin: 5px;
+.x-color {
+  color: yellow;
 }
 
-.xo-button{
-  width: max-content;
-  margin: 10px 10px 20px 10px;
-  font-weight: bolder;
-  font-size: large;
+.o-color {
+  color:chartreuse;
 }
+

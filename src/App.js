@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import SquareComponent from './squarecomponent';
 const initialState=["","","","","","","","",""];
+const initialScore=[0,0];
 
 function App() {
   const [gameState,updateGameState]=useState(initialState);
   const [isXChance,updateIsXchance]=useState(false);
-  
+  const [gameScore,updateScore]=useState(initialScore);
+
   const buttons = Array.from(document.querySelectorAll("button"));
-  if(buttons.length===3){
+  if(buttons.length===4){
     if(gameState === initialState){
       buttons[2].setAttribute("disabled","disabled");
       buttons[0].removeAttribute("disabled");
@@ -45,13 +47,27 @@ function App() {
     updateIsXchance(false);
   }
 
+  const onRestart = () => {
+    updateScore(initialScore);
+    updateGameState(initialState);
+    updateIsXchance(false);
+  }
+
   useEffect(() => {
     const winner = checkWinner();
     if(winner){
       alert(`Yeah ! ${winner} has won the Game!`)
       onClear();
+      let scores = Array.from(gameScore)
+      if(`${winner}`==='O'){
+        scores[0]++;
+      }
+      else{
+        scores[1]++;
+      }
+      updateScore(scores);
     }
-  }, [gameState])
+  }, [gameState,gameScore])
 
   const checkWinner = () => {
     const lines = [
@@ -76,11 +92,18 @@ function App() {
   return (
     <div className="App-header">
         <p className="heading-text">Tic Tac Toe Game</p>
+        
         <p className="start">Start with </p>
+        
         <div className="row jc">
           <button id="o" className="xo-button" onClick={() => onClickXO(0)}> O </button>
           <button id="x" className="xo-button" onClick={() => onClickXO(1)}> X </button>
         </div>
+        
+        <p className="score-text">Score</p>
+        
+        <span className="score">{gameScore[0]} - {gameScore[1]}</span>
+        
         <div className=" row jc ">
           <SquareComponent className="border-br" state={gameState[0]} onClick={()=>onSquareClicked(0)}/>
           <SquareComponent className="border-br" state={gameState[1]} onClick={()=>onSquareClicked(1)}/>
@@ -96,7 +119,10 @@ function App() {
           <SquareComponent className="border-r" state={gameState[7]} onClick={()=>onSquareClicked(7)}/>
           <SquareComponent state={gameState[8]} onClick={()=>onSquareClicked(8)}/>
         </div>
+        <div>
         <button id="clear" className="clear-button" onClick={() => onClear() } >Clear Game</button>
+        <button className="restart" onClick={() => onRestart()}>Restart</button>
+        </div>
         <p className="made-by">Developed by Soham Patra</p>
     </div>
   );

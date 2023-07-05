@@ -1,0 +1,113 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color:black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.heading-text {
+  color: white;
+  font-size: 42px;
+  font-weight: bolder;
+  text-align: center;
+  margin: 0px auto 10px auto;
+}
+
+
+.start {
+  color: #1CDBF5;
+  font-size: x-large;
+  margin: 0px;
+  font-weight: bolder;
+}
+
+.xo-button{
+  width: max-content;
+  margin: 10px;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.score-text {
+  font-size:large;
+  font-weight: 600;
+  color:#1CDBF5;
+  margin: 0px;
+}
+
+.score {
+  font-size: large;
+  margin: 0px auto 15px auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.jc {
+  justify-content: center;
+}
+
+.square {
+  min-width: 80px;
+  min-height: 80px;
+  font-size: 56px;
+  text-align: center;
+  font-weight: bolder;
+  padding: 15px;
+}
+
+.border-br {
+  border-right: 10px solid #1CDBF5;
+  border-bottom: 10px solid #1CDBF5;
+}
+
+.border-r {
+  border-right: 10px solid #1CDBF5;
+}
+
+.border-b {
+  border-bottom: 10px solid #1CDBF5;
+}
+
+.clear-button{
+  width:max-content;
+  margin: 40px 20px 10px auto;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.restart {
+  width: max-content;
+  margin: 40px auto 10px 20px;
+  font-weight: bolder;
+  font-size:large;
+}
+
+.made-by {
+  color: #ffffff;
+  font-size: small;
+}
+
+.x-color {
+  color: yellow;
+}
+
+.o-color {
+  color:chartreuse;
+}
+
